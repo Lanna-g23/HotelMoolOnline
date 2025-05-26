@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7a686888-3039-48c4-baad-ad061a46b38c" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2sztNr4VsvmtXXLdDnU2hhHppJv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CadCliente.executor": "Run",
+    "Application.CadFucionario.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/lanna.greis/OneDrive - SENAC - SP/MoonLight",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="view" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lanna.greis\OneDrive - SENAC - SP\HotelMoon\src\view\img" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.CadCliente">
+    <configuration name="CadCliente" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="view.CadCliente" />
+      <module name="HotelMoon" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\lanna.greis\OneDrive - SENAC - SP\openjfx-21.0.6_windows-x64_bin-sdk\javafx-sdk-21.0.6\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CadFucionario" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="view.CadUsuario" />
+      <module name="HotelMoon" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\lanna.greis\OneDrive - SENAC - SP\openjfx-21.0.6_windows-x64_bin-sdk\javafx-sdk-21.0.6\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.CadCliente" />
+      <item itemvalue="Application.CadFucionario" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a686888-3039-48c4-baad-ad061a46b38c" name="Changes" comment="" />
+      <created>1739470195855</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739470195855</updated>
+      <workItem from="1739470196906" duration="20000" />
+      <workItem from="1739470339840" duration="16000" />
+      <workItem from="1739470372256" duration="45000" />
+      <workItem from="1739470603595" duration="29000" />
+      <workItem from="1739470641829" duration="38000" />
+      <workItem from="1739470695317" duration="42000" />
+      <workItem from="1739470756112" duration="22000" />
+      <workItem from="1739470801483" duration="27000" />
+      <workItem from="1739470848314" duration="26000" />
+      <workItem from="1739470887387" duration="8000" />
+      <workItem from="1739470908841" duration="152000" />
+      <workItem from="1739471075331" duration="5117000" />
+      <workItem from="1739553085194" duration="6296000" />
+      <workItem from="1740070250745" duration="2375000" />
+      <workItem from="1740081006077" duration="2396000" />
+      <workItem from="1740157172264" duration="589000" />
+      <workItem from="1740158425928" duration="8938000" />
+      <workItem from="1740674467836" duration="10692000" />
+      <workItem from="1740761188849" duration="1066000" />
+      <workItem from="1740762482690" duration="8030000" />
+      <workItem from="1741282551105" duration="39000" />
+      <workItem from="1741282611717" duration="23000" />
+      <workItem from="1741282732973" duration="132000" />
+      <workItem from="1741282884596" duration="31000" />
+      <workItem from="1741282926151" duration="89000" />
+      <workItem from="1741283193455" duration="11000" />
+      <workItem from="1741283216487" duration="881000" />
+      <workItem from="1741284120658" duration="6450000" />
+      <workItem from="1741363787675" duration="337000" />
+      <workItem from="1741364222793" duration="844000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
