@@ -1,4 +1,8 @@
 ### IntelliJ IDEA ###
+
+### .gitignore permite que diretórioas e arquivos
+### sejam ignorados ao realizar o VERSIONAMENTO
+### LOCAL E REMOTO!
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
