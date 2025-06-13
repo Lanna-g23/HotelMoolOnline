@@ -1,7 +1,6 @@
 package dao;
 
-import model.Cliente;
-import model.Reserva;
+
 import util.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +8,7 @@ import java.sql.PreparedStatement;
 public class ClientesDAO {
     private Conexao conexao = new Conexao();
 
-    public boolean inserirCliente(/*Usuario usuario*/) {
+    public boolean inserirCliente() {
         try {
             Connection con = conexao.conectar();
             PreparedStatement novoCliente = con.prepareStatement("INSERT INTO clientes " +
@@ -31,7 +30,7 @@ public class ClientesDAO {
         }
     }
 
-    public boolean deletarCliente(Cliente cliente) {
+    public boolean deletarCliente() {
         try {
             Connection con = conexao.conectar();
             PreparedStatement removeCliente = con.prepareStatement("DELETE FROM clientes WHERE id = ?;");
@@ -44,7 +43,7 @@ public class ClientesDAO {
             return false;
         }
     }
-    public boolean alterarClientes(Cliente cliente) {
+    public boolean alterarClientes() {
         try {
             Connection conn = conexao.conectar();
             PreparedStatement clienteAlterado = conn.prepareStatement("UPDATE clientes" +

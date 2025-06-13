@@ -1,7 +1,5 @@
 package dao;
 
-import model.Cliente;
-import model.Quarto;
 import util.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -65,7 +63,7 @@ public class QuartosDAO {
             conn.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao deletar usuario:" + erro);
+            System.out.println("Erro ao alterar usuario:" + erro);
             return false;
         }
     }

@@ -1,6 +1,5 @@
 package dao;
 
-import model.Usuario;
 import util.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +9,7 @@ public class UsuariosDAO {
     //Objeto para instanciar classe Conexao para requisitar acesso ao DB
     private Conexao conexao = new Conexao();
 
-    public boolean inserirUsuario(/*Usuario usuario*/) {
+    public boolean inserirUsuario() {
         try {
             Connection conndb = conexao.conectar();
             PreparedStatement novoUsuario = conndb.prepareStatement("INSERT INTO usuarios " +
@@ -31,7 +30,7 @@ public class UsuariosDAO {
         }
     }
 
-    public boolean deletarUsuario(Usuario usuario) {
+    public boolean deletarUsuario() {
         try {
             Connection conn = conexao.conectar();
             PreparedStatement removeUsuario = conn.prepareStatement("DELETE FROM usuarios WHERE id = ?;");
