@@ -1,6 +1,7 @@
 package dao;
 
 import model.Cliente;
+import model.Reserva;
 import util.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -43,4 +44,24 @@ public class ClientesDAO {
             return false;
         }
     }
+    public boolean alterarClientes(Cliente cliente) {
+        try {
+            Connection conn = conexao.conectar();
+            PreparedStatement clienteAlterado = conn.prepareStatement("UPDATE clientes" +
+                    " SET nome = ?, cpf = ?, telefone = ?, email = ?  WHERE id = ?;");
+
+            clienteAlterado.setInt(1, 1);
+            clienteAlterado.setString(2, "2232");
+            clienteAlterado.setString(3, "63647239234");
+            clienteAlterado.setString(4,"lannagr@gmail.com"); //Alterar usuário c/ chave primária ID=1
+            clienteAlterado.setInt(5, 1);
+            int linhaAfetada = clienteAlterado.executeUpdate();
+            conn.close();
+            return linhaAfetada > 0;
+        } catch (Exception erro) {
+            System.out.println("Erro ao deletar usuario:" + erro);
+            return false;
+        }
+    }
 }
+

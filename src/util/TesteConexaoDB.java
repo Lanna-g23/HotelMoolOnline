@@ -20,25 +20,42 @@ public class TesteConexaoDB {
             System.out.println("Conexão estabelcida com sucesso!");
 
             try {
-                UsuariosDAO usuariosDAO = new UsuariosDAO();
-                usuariosDAO.inserirUsuario();
+//                UsuariosDAO usuariosDAO = new UsuariosDAO();
+//                usuariosDAO.inserirUsuario();
+//                UsuariosDAO usuariosDAO = new UsuariosDAO();
+//                usuariosDAO.pesquisarUsuario();
+//                UsuariosDAO usuariosDAO = new UsuariosDAO();
+//                usuariosDAO.alterarUsuario();
+//
+//                ClientesDAO clientesDAO = new ClientesDAO();
+//                clientesDAO.inserirCliente();
+//
+//                QuartosDAO quartosDAO = new QuartosDAO();
+//                quartosDAO.inserirQuarto();
+//                QuartosDAO quartosDAO = new QuartosDAO();
+//                quartosDAO.deletarQuarto();
+//                QuartosDAO quartosDAO = new QuartosDAO();
+//                quartosDAO.alterarQuarto();
+//
+//                AdicionaisDAO adicionaisDAO = new AdicionaisDAO();
+//                adicionaisDAO.inserirAdicionais();
+//                AdicionaisDAO adicionaisDAO2 = new AdicionaisDAO();
+//                adicionaisDAO2.deletarAdicinais();
+//                AdicionaisDAO adicionaisDAO = new AdicionaisDAO();
+//                adicionaisDAO.alterarAdicinais();
+//
+//                RoleDAO roleDAO = new RoleDAO();
+//                roleDAO.inserirCargo();
+//                RoleDAO roleDAO2 = new RoleDAO();
+//                roleDAO2.deletarRole();
+//                RoleDAO roleDAO3 = new RoleDAO();
+//                roleDAO3.alterarRole();
+//
+//                PedidosDAO pedidosDAO = new PedidosDAO();
+//                pedidosDAO.inserirPedidos();
 
-                ClientesDAO clientesDAO = new ClientesDAO();
-                clientesDAO.inserirCliente();
 
-                QuartosDAO quartosDAO = new QuartosDAO();
-                quartosDAO.inserirQuarto();
-
-                AdicionaisDAO adicionaisDAO = new AdicionaisDAO();
-                adicionaisDAO.inserirAdicionais();
-
-                RoleDAO roleDAO = new RoleDAO();
-                roleDAO.inserirCargo();
-
-                PedidosDAO pedidosDAO = new PedidosDAO();
-                pedidosDAO.inserirPedido();
-
-                System.out.println("Usuarios inseridos com sucesso!");
+                //System.out.println("Usuarios inseridos com sucesso!");
                 condb.close();
                 System.out.println("Conexão encerrada!");
 

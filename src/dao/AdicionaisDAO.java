@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 public class AdicionaisDAO {
     private Conexao conexao = new Conexao();
 
-    public boolean inserirAdicionais(/*Usuario usuario*/) {
+    public boolean inserirAdicionais() {
         try {
             Connection conn = conexao.conectar();
             PreparedStatement novoAdiciona = conn.prepareStatement("INSERT INTO adicionais " +
@@ -27,8 +27,7 @@ public class AdicionaisDAO {
             return false;
         }
     }
-
-    public boolean deletarAdicinais(Adicionais adicionais) {
+    public boolean deletarAdicinais() {
         try {
             Connection connd = conexao.conectar();
             PreparedStatement removeAdiciona = connd.prepareStatement("DELETE FROM adicionais WHERE id = ?;");
@@ -42,25 +41,22 @@ public class AdicionaisDAO {
         }
     }
 
-    public boolean alterarRole() {
+    public boolean alterarAdicinais() {
         try {
             Connection conn = conexao.conectar();
-            PreparedStatement adicionaisAlterado = conn.prepareStatement("UPDATE usuarios" +
-                    " SET nome = ?, email = ?, senha = md5(?) + ?," +
-                    "role_id = ? WHERE id = ?;");
+            PreparedStatement adicionaisAlterado = conn.prepareStatement("UPDATE adicionais" +
+                    " SET nome = ?, preco = ? WHERE id = ?;");
 
-            adicionaisAlterado.setString(1, "Pamela");
-            adicionaisAlterado.setString(2, "pamellapereto@gmail.com");
-            adicionaisAlterado.setString(3, "123");
-            adicionaisAlterado.setInt(4, 1);
-            adicionaisAlterado.setInt(5, 1); //Alterar usuário c/ chave primária ID=1
+            adicionaisAlterado.setString(1, "Maria");
+            adicionaisAlterado.setDouble(2, 112.50);
+            adicionaisAlterado.setInt(3, 1);
+
             int linhaAfetada = adicionaisAlterado.executeUpdate();
             conn.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
             System.out.println("Erro ao deletar usuario:" + erro);
             return false;
-
         }
     }
 }
