@@ -3,6 +3,7 @@ package dao;
 import util.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class AdicionaisDAO {
     private Conexao conexao = new Conexao();
@@ -22,10 +23,11 @@ public class AdicionaisDAO {
             return linhaAfetada > 0;
 
         } catch (Exception erro) {
-            System.out.println("Erro ao inserir usuario:" + erro);
+            System.out.println("Erro ao inserir adicionais: " + erro);
             return false;
         }
     }
+
     public boolean deletarAdicinais() {
         try {
             Connection connd = conexao.conectar();
@@ -35,7 +37,7 @@ public class AdicionaisDAO {
             connd.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao deletar usuario:" + erro);
+            System.out.println("Erro ao deletar adicionais: " + erro);
             return false;
         }
     }
@@ -54,8 +56,25 @@ public class AdicionaisDAO {
             conn.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao alterar usuario:" + erro);
+            System.out.println("Erro ao alterar adicionais: " + erro);
             return false;
+        }
+    }
+    public void pesquisarAdicionais() {
+        try {
+            Connection conndb = conexao.conectar();
+            PreparedStatement buscaAdicionais = conndb.prepareStatement("SELECT nome, preco FROM adicionais WHERE id = ?;");
+            buscaAdicionais.setInt(1, 1);
+
+            ResultSet resultado = buscaAdicionais.executeQuery();
+            while (resultado.next()) {
+                String nome = resultado.getString("nome");
+                String preco = resultado.getString("preco");
+                System.out.println("Nome: " + nome + " Preco: " + preco);
+            }
+            conndb.close();
+        } catch (Exception erro) {
+            System.out.println("Erro ao pesquisar adicionais: " + erro);
         }
     }
 }

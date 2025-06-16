@@ -25,7 +25,7 @@ public class UsuariosDAO {
             conndb.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao inserir usuario:" + erro);
+            System.out.println("Erro ao inserir usuario: " + erro);
             return false;
         }
     }
@@ -39,7 +39,7 @@ public class UsuariosDAO {
             conn.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao deletar usuario:" + erro);
+            System.out.println("Erro ao deletar usuario: " + erro);
             return false;
         }
     }
@@ -59,7 +59,7 @@ public class UsuariosDAO {
             conn.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao alterar usuario:" + erro);
+            System.out.println("Erro ao alterar usuario: " + erro);
             return false;
 
         }
@@ -71,8 +71,8 @@ public class UsuariosDAO {
             PreparedStatement buscaUsuario = conndb.prepareStatement("SELECT nome, email"
                     + " FROM usuarios WHERE role_id = ?");
             buscaUsuario.setInt(1,1);
-            ResultSet resultado = buscaUsuario.executeQuery();
 
+            ResultSet resultado = buscaUsuario.executeQuery();
             while (resultado.next()){
                 String nome = resultado.getString("nome");
                 String email = resultado.getString("email");
@@ -81,7 +81,7 @@ public class UsuariosDAO {
             conndb.close();
         }
         catch (Exception erro) {
-            System.out.println("Erro ao pesquisar usuario:" + erro);
+            System.out.println("Erro ao pesquisar usuario: " + erro);
         }
     }
 }

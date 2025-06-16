@@ -1,9 +1,9 @@
 package dao;
 
-
 import util.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class ClientesDAO {
     private Conexao conexao = new Conexao();
@@ -25,7 +25,7 @@ public class ClientesDAO {
             novoCliente.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao inserir usuario:" + erro);
+            System.out.println("Erro ao inserir cliente: " + erro);
             return false;
         }
     }
@@ -39,28 +39,48 @@ public class ClientesDAO {
             con.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao deletar usuario:" + erro);
+            System.out.println("Erro ao deletar cliente: " + erro);
             return false;
         }
     }
+
     public boolean alterarClientes() {
         try {
             Connection conn = conexao.conectar();
             PreparedStatement clienteAlterado = conn.prepareStatement("UPDATE clientes" +
                     " SET nome = ?, cpf = ?, telefone = ?, email = ?  WHERE id = ?;");
 
-            clienteAlterado.setInt(1, 1);
-            clienteAlterado.setString(2, "2232");
-            clienteAlterado.setString(3, "63647239234");
-            clienteAlterado.setString(4,"lannagr@gmail.com"); //Alterar usuário c/ chave primária ID=1
-            clienteAlterado.setInt(5, 1);
+            clienteAlterado.setString(1, "Lanna");
+            clienteAlterado.setString(2, "776892445-12");
+            clienteAlterado.setString(3, "(15)66666666");
+            clienteAlterado.setString(4, "lanna@gmail.com");
+            clienteAlterado.setInt(5, 10);
+
             int linhaAfetada = clienteAlterado.executeUpdate();
             conn.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao deletar usuario:" + erro);
+            System.out.println("Erro ao alterar cliente: " + erro);
             return false;
         }
     }
-}
+    public void pesquisarClientes() {
+        try {
+            Connection conndb = conexao.conectar();
+            PreparedStatement buscaClientes = conndb.prepareStatement("SELECT nome, cpf, telefone, email FROM clientes WHERE id = ?;");
+            buscaClientes.setInt(1, 10);
 
+            ResultSet resultado = buscaClientes.executeQuery();
+            while (resultado.next()) {
+                String nome = resultado.getString("nome");
+                String cpf = resultado.getString("cpf");
+                String telefone = resultado.getString("telefone");
+                String email = resultado.getString("email");
+                System.out.println("Nome: " + nome + " CPF: " + cpf + " Telefone: " + telefone + " Email: " + email);
+            }
+            conndb.close();
+        } catch (Exception erro) {
+            System.out.println("Erro ao pesquisar cliente: " + erro);
+        }
+    }
+}

@@ -3,6 +3,7 @@ package dao;
 import util.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class QuartosDAO {
     private Conexao conexao = new Conexao();
@@ -26,7 +27,7 @@ public class QuartosDAO {
             novoQuarto.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao inserir usuario:" + erro);
+            System.out.println("Erro ao inserir quarto: " + erro);
             return false;
         }
     }
@@ -40,7 +41,7 @@ public class QuartosDAO {
             conn.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao deletar usuario:" + erro);
+            System.out.println("Erro ao deletar quarto: " + erro);
             return false;
         }
     }
@@ -63,8 +64,26 @@ public class QuartosDAO {
             conn.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao alterar usuario:" + erro);
+            System.out.println("Erro ao alterar quarto: " + erro);
             return false;
+        }
+    }
+
+    public void pesquisarQuartos() {
+        try {
+            Connection conndb = conexao.conectar();
+            PreparedStatement buscaRoles = conndb.prepareStatement("SELECT nome, numero FROM quartos WHERE id = ?;");
+            buscaRoles.setInt(1, 9);
+
+            ResultSet resultado = buscaRoles.executeQuery();
+            while (resultado.next()) {
+                String nome = resultado.getString("nome");
+                String numero = resultado.getString("numero");
+                System.out.println("Nome: " + nome + " Numero: " + numero);
+            }
+            conndb.close();
+        } catch (Exception erro) {
+            System.out.println("Erro ao pesquisar quarto:" + erro);
         }
     }
 }

@@ -1,9 +1,9 @@
 package dao;
 
-
 import util.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class PedidosDAO {
 
@@ -29,6 +29,20 @@ public class PedidosDAO {
         }
     }
 
+    public boolean deletarPedidos() {
+        try {
+            Connection conn = conexao.conectar();
+            PreparedStatement removePedidos = conn.prepareStatement("DELETE FROM pedidos WHERE id = ?;");
+            removePedidos.setInt(1, 1);
+            int linhaAfetada = removePedidos.executeUpdate();
+            conn.close();
+            return linhaAfetada > 0;
+        } catch (Exception erro) {
+            System.out.println("Erro ao deletar pedido: " + erro);
+            return false;
+        }
+    }
+
     public boolean alterarPedidos() {
         try {
             Connection conn = conexao.conectar();
@@ -45,8 +59,25 @@ public class PedidosDAO {
             conn.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao alterar usuario:" + erro);
+            System.out.println("Erro ao alterar/ usuario:" + erro);
             return false;
+        }
+    }
+
+    public void pesquisarPerdidos() {
+        try {
+            Connection conndb = conexao.conectar();
+            PreparedStatement buscaQuartos = conndb.prepareStatement("SELECT nome FROM pedidos WHERE id = ?;");
+            buscaQuartos.setInt(1, 1);
+
+            ResultSet resultado = buscaQuartos.executeQuery();
+            while (resultado.next()) {
+                String nome = resultado.getString("nome");
+                System.out.println("Nome:" + nome);
+            }
+            conndb.close();
+        } catch (Exception erro) {
+            System.out.println("Erro ao pesquisar do perdido:" + erro);
         }
     }
 }

@@ -1,6 +1,5 @@
 package dao;
 
-import model.Reserva;
 import util.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +8,7 @@ public class ReservasDAO{
 
     private Conexao conexao = new Conexao();
 
-    public boolean deletarReseva(Reserva reserva) {
+    public boolean deletarReseva() {
 
         try {
             Connection conn = conexao.conectar();
@@ -19,11 +18,11 @@ public class ReservasDAO{
             conn.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao deletar usuario:" + erro);
+            System.out.println("Erro ao deletar reserva:" + erro);
             return false;
         }
     }
-    public boolean alterarReserva(Reserva reserva) {
+    public boolean alterarReserva() {
         try {
             Connection conn = conexao.conectar();
             PreparedStatement reservaAlterado = conn.prepareStatement("UPDATE reservas" +
@@ -37,7 +36,7 @@ public class ReservasDAO{
             conn.close();
             return linhaAfetada > 0;
         } catch (Exception erro) {
-            System.out.println("Erro ao deletar usuario:" + erro);
+            System.out.println("Erro ao alterar reserva: " + erro);
             return false;
         }
     }
